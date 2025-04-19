@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927453258535",
+    "project_id": "bazarmela-5193f",
+    "storage_bucket": "bazarmela-5193f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927453258535:android:674aecce45325ec2adff02",
+        "android_client_info": {
+          "package_name": "com.example.bazarmela"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCkz0hpjgxkGDIVCf87WaID6n_6IsL-fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
