@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -50,19 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBCkz0hpjgxkGDIVCf87WaID6n_6IsL-fU',
-    appId: '1:927453258535:android:674aecce45325ec2adff02',
-    messagingSenderId: '927453258535',
-    projectId: 'bazarmela-5193f',
-    storageBucket: 'bazarmela-5193f.firebasestorage.app',
+    apiKey: 'AIzaSyA-mAVizk5UV2DMPNe8DKlAaBCo-fSiL7E',
+    appId: '1:907272246902:android:84829e63f2c29a72b9f157',
+    messagingSenderId: '907272246902',
+    projectId: 'ecomp2-9df5f',
+    storageBucket: 'ecomp2-9df5f.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD7IB2PTo8XxffdlJ7_2IhnS5fUbyoSOgU',
-    appId: '1:927453258535:ios:c63320698c92c9b4adff02',
-    messagingSenderId: '927453258535',
-    projectId: 'bazarmela-5193f',
-    storageBucket: 'bazarmela-5193f.firebasestorage.app',
+    apiKey: 'AIzaSyA-fVpzogLo7dNe6COPGhqswV_nTv5dTPY',
+    appId: '1:907272246902:ios:181102ba5ba6601cb9f157',
+    messagingSenderId: '907272246902',
+    projectId: 'ecomp2-9df5f',
+    storageBucket: 'ecomp2-9df5f.appspot.com',
     iosBundleId: 'com.example.bazarmela',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBl4JjqyI1UITcQXkFqdD6YukKddjlrd1Y',
+    appId: '1:907272246902:web:60f30bc421b0403bb9f157',
+    messagingSenderId: '907272246902',
+    projectId: 'ecomp2-9df5f',
+    authDomain: 'ecomp2-9df5f.firebaseapp.com',
+    storageBucket: 'ecomp2-9df5f.appspot.com',
+    measurementId: 'G-66P9S7SYW4',
+  );
+
 }

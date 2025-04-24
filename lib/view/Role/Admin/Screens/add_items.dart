@@ -30,7 +30,7 @@ class AddItems extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start̂,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: Container(
@@ -42,7 +42,7 @@ class AddItems extends ConsumerWidget {
                   ),
                   child:
                       state.imagePath != null
-                          ? ClipR Rect(
+                          ? ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.file(
                               File(state.imagePath!),

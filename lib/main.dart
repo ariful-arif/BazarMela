@@ -13,16 +13,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   try {
-//     await Firebase.initializeApp();
-//     print("✅ Firebase Initialized!");
-//   } catch (e) {
-//     print("❌ Firebase Initialization failed: $e");
-//   }
-//   runApp(MyApp());
-// }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -108,3 +99,130 @@ class _AuthHandleStateState extends State<AuthHandleState> {
     return _userRole == "Admin" ? AdminHomeScreen() : UserHomeScreen();
   }
 }
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   // Theme mode state
+//   ThemeMode _themeMode = ThemeMode.light;
+
+//   // Light Theme
+//   final ThemeData lightTheme = ThemeData(
+//     brightness: Brightness.light,
+//     primarySwatch: Colors.indigo,
+//     scaffoldBackgroundColor: Colors.white,
+//     appBarTheme: AppBarTheme(backgroundColor: Colors.indigo),
+//     textTheme: TextTheme(
+//       bodyLarge: TextStyle(color: Colors.black),
+//       headlineSmall: TextStyle(color: Colors.indigo),
+//     ),
+//     elevatedButtonTheme: ElevatedButtonThemeData(
+//       style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo),
+//     ),
+//   );
+
+//   // Dark Theme
+//   final ThemeData darkTheme = ThemeData(
+//     brightness: Brightness.dark,
+//     primarySwatch: Colors.indigo,
+//     scaffoldBackgroundColor: Colors.black,
+//     appBarTheme: AppBarTheme(backgroundColor: Colors.grey[900]),
+//     textTheme: TextTheme(
+//       bodyLarge: TextStyle(color: Colors.white),
+//       headlineSmall: TextStyle(color: Colors.amberAccent),
+//     ),
+//     elevatedButtonTheme: ElevatedButtonThemeData(
+//       style: ElevatedButton.styleFrom(backgroundColor: Colors.amberAccent),
+//     ),
+//   );
+
+//   // Toggle between dark/light
+//   void _toggleTheme() {
+//     setState(() {
+//       _themeMode =
+//           _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Responsive App',
+//       theme: lightTheme,
+//       darkTheme: darkTheme,
+//       themeMode: _themeMode,
+//       home: HomePage(onToggleTheme: _toggleTheme, isDarkMode: _themeMode == ThemeMode.dark),
+//     );
+//   }
+// }
+
+// class HomePage extends StatelessWidget {
+//   final VoidCallback onToggleTheme;
+//   final bool isDarkMode;
+
+//   const HomePage({required this.onToggleTheme, required this.isDarkMode});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final screenWidth = MediaQuery.of(context).size.width;
+
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Responsive App'),
+//         actions: [
+//           IconButton(
+//             icon: Icon(isDarkMode ? Icons.wb_sunny : Icons.nightlight_round),
+//             onPressed: onToggleTheme,
+//           )
+//         ],
+//       ),
+//       body: Center(
+//         child: Container(
+//           padding: EdgeInsets.all(16),
+//           width: screenWidth < 600 ? screenWidth * 0.9 : 500,
+//           decoration: BoxDecoration(
+//             color: Theme.of(context).cardColor,
+//             borderRadius: BorderRadius.circular(16),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black26,
+//                 blurRadius: 10,
+//                 offset: Offset(0, 4),
+//               ),
+//             ],
+//           ),
+//           child: Column(
+//             mainAxisSize: MainAxisSize.min,
+//             children: [
+//               Icon(
+//                 Icons.phone_android,
+//                 size: 60,
+//                 color: Theme.of(context).colorScheme.secondary,
+//               ),
+//               SizedBox(height: 16),
+//               Text(
+//                 isDarkMode ? 'Dark Mode Activated' : 'Light Mode Activated',
+//                 style: Theme.of(context).textTheme.headlineSmall,
+//                 textAlign: TextAlign.center,
+//               ),
+//               SizedBox(height: 16),
+//               ElevatedButton(
+//                 onPressed: () {},
+//                 child: Text('Get Started'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
