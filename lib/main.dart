@@ -96,7 +96,7 @@ class _AuthHandleStateState extends State<AuthHandleState> {
     if (_userRole == null) {
       return Scaffold(body: Center(child: CircularProgressIndicator()));
     }
-    return _userRole == "Admin" ? AdminHomeScreen() : UserHomeScreen();
+    return _userRole == "Admin" ? AdminHomeScreen() : AppMainScreen();
   }
 }
 

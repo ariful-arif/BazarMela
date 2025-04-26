@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // ).showSnackBar(SnackBar(content: Text("Login Successfully")));
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => UserHomeScreen()),
+        MaterialPageRoute(builder: (context) => AppMainScreen()),
       );
     } else {
       ScaffoldMessenger.of(

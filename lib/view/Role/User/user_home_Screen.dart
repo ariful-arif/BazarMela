@@ -1,40 +1,54 @@
-import 'package:bazarmela/Services/auth_service.dart';
-import 'package:bazarmela/view/login_screen.dart';
+import 'package:bazarmela/view/Role/User/app_home_screen.dart';
 import 'package:flutter/material.dart';
 
-class UserHomeScreen extends StatefulWidget {
-  const UserHomeScreen({super.key});
+class AppMainScreen extends StatefulWidget {
+  const AppMainScreen({super.key});
 
   @override
-  State<UserHomeScreen> createState() => _UserHomeScreenState();
+  State<AppMainScreen> createState() => _AppMainScreenState();
 }
 
-class _UserHomeScreenState extends State<UserHomeScreen> {
-  final AuthService _authService = AuthService();
+class _AppMainScreenState extends State<AppMainScreen> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _pages = [
+    AppHomeScreen(),
+    Center(child: Text('Search Page')),
+    Center(child: Text('Notification Page')),
+    Center(child: Text('Profile Page')),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("User Dashboard")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-
-          children: [
-            Text("Welcome to the User home screen"),
-            ElevatedButton(
-              onPressed: () {
-                _authService.logout();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                );
-              },
-              child: Text("Signout"),
-            ),
-          ],
-        ),
+      backgroundColor: Colors.white,
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: "Notification",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black38,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        onTap: _onItemTapped,
       ),
-     
     );
   }
 }
